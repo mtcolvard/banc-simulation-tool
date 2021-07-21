@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Silence from './examples/Silence'
+import TrafficFastmovingFreeway from './examples/Traffic-Fastmoving-Freeway'
+import TLsim from './examples/TLsim'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Switch>
+        <Route path="/Silence" component={Silence} />
+        <Route path="/Traffic-Fastmoving-Freeway" component={TrafficFastmovingFreeway} />
+        <Route path="/" component={TLsim} />
+
+      </Switch>
+  </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
